@@ -1,10 +1,79 @@
-/* style.css */
-body { font-family: sans-serif; background: #f0f2f5; color: #333; line-height: 1.6; }
-.container { max-width: 600px; margin: 2rem auto; padding: 0 1rem; }
-.card { background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 1.5rem; }
-.hidden { display: none; }
-textarea, input[type="text"] { width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 1rem; }
-button { background: #007bff; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer; margin-top: 1rem; font-weight: bold; }
-button:hover { background: #0056b3; }
-.result-box { background: #e9ecef; padding: 1rem; border-radius: 6px; font-size: 1.2rem; min-height: 50px; border-left: 5px solid #007bff; }
-.setting-row { margin-top: 1rem; display: flex; align-items: center; gap: 10px; }
+/* 変数定義 */
+:root {
+    --hajime-purple: #a390e4;
+    --hajime-cyan: #7fe7f5;
+    --hajime-yellow: #f9d423;
+    --bg-dark: #2e2a41;
+    --text-main: #ffffff;
+}
+
+body {
+    background: var(--bg-dark);
+    color: var(--text-main);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.card {
+    padding: 1rem;
+    margin: 2rem auto;
+    background: #3d3854;
+    border-top: 4px solid var(--hajime-purple);
+    color: #fff;
+}
+
+/* テキストエリアのサイズ制御 */
+textarea {
+    width: 95%;
+    resize: vertical; /* 縦方向にのみ拡大可能 */
+    min-height: 100px;
+    background: #252233;
+    color: #fff;
+    border: 1px solid var(--hajime-purple);
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+/* ボタンの配色 */
+button {
+    background: var(--hajime-purple);
+    transition: filter 0.2s;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+button:hover {
+    filter: brightness(1.2);
+    background: var(--hajime-purple);
+}
+
+#btn-convert {
+    background: var(--hajime-cyan);
+    color: #2e2a41;
+}
+
+/* フッター */
+footer {
+    margin-top: 3rem;
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #aaa;
+    border-top: 1px solid #444;
+}
+
+.disclaimer {
+    margin-top: 0.5rem;
+    font-size: 0.7rem;
+    color: #888;
+}
+
+.hidden {
+    display: none;
+}
