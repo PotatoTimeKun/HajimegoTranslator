@@ -77,3 +77,13 @@ footer {
 .hidden {
     display: none;
 }
+
+/* Xボタンのスタイル */
+.btn-x {
+    background: #000 !important; /* X (Twitter) のブラック */
+    color: #fff !important;
+}
+
+.btn-x:hover {
+    background: #333 !important;
+}

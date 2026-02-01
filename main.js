@@ -22,6 +22,7 @@ class HajimeConverter {
             document.getElementById('accent-value').textContent = e.target.value + "%";
             this.accentIntensity = e.target.value / 100;
         });
+        document.getElementById('btn-share-x').addEventListener('click', () => this.handleShareX());
         // ボイスリストの非同期ロード対策
         if (typeof speechSyntesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
             speechSynthesis.onvoiceschanged = () => {
@@ -435,6 +436,25 @@ class HajimeConverter {
             console.error("コピーに失敗しました:", err);
             alert("コピーに失敗しました。お使いのブラウザの設定を確認してね。");
         }
+    }
+
+    handleShareX() {
+        const resultText = document.getElementById('result-display').textContent;
+        
+        if (!resultText) {
+            alert("投稿するテキストがありません。");
+            return;
+        }
+
+        // 投稿文の組み立て
+        const tweetText = `${resultText}\n\n#轟はじめ #はじめ語変換ツール`;
+        const tweetUrl = window.location.href; // 現在のツールのURL（GitHub Pages等）
+
+        // Intent URL の作成
+        const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}&url=${encodeURIComponent(tweetUrl)}`;
+
+        // 新しいウィンドウで開く
+        window.open(shareUrl, '_blank', 'width=550,height=420');
     }
 }
 
