@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>はじめ語変換ツール (Prototyping)</title>
-    <link rel="stylesheet" href="style.css">
+    <title>はじめ語変換ツール</title>
+    <link rel="stylesheet" href="style.css?v=0.0">
+    <script src="https://cdn.jsdelivr.net/npm/kuroshiro@1.2.0/dist/kuroshiro.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/kuroshiro-analyzer-kuromoji@1.1.0/dist/kuroshiro-analyzer-kuromoji.min.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>はじめ語変換ジェネレーター</h1>
+        <h1>はじめ語変換ツール</h1>
 
         <section class="card">
             <h2>Step 1: 日本語入力</h2>
@@ -19,12 +21,14 @@
         <section id="step-edit" class="card hidden">
             <h2>Step 2: 読みと区切りの確認</h2>
             <p class="instruction">スラッシュ `/` で区切りを編集できるよ。読みが違う場合は直接直してね。</p>
-            <input type="text" id="edit-hiragana">
+            <textarea id="edit-hiragana" rows="4"></textarea>
+            
             <div class="setting-row">
-                <label for="accent-range">訛り度（カオス度）:</label>
+                <label for="accent-range">訛り度:</label>
                 <input type="range" id="accent-range" min="0" max="100" value="70">
                 <span id="accent-value">70%</span>
             </div>
+        
             <button id="btn-convert">はじめ語に変換！</button>
         </section>
 
@@ -35,8 +39,19 @@
                 <button id="btn-play">▶ 再生する</button>
                 <button id="btn-copy">コピー</button>
             </div>
+            <div class="setting-row">
+                <label for="volume-range">音量:</label>
+                <input type="range" id="volume-range" min="0" max="1" step="0.1" value="1">
+                <span id="volume-value">100%</span>
+            </div>
         </section>
     </div>
     <script src="main.js"></script>
 </body>
+<footer>
+    <p>&copy; 2026 塩ポテト君 / はじめ語変換ツール</p>
+    <p class="disclaimer">
+        ※本ツールは「轟はじめ」さんの二次創作コンテンツです。ホロライブ公式およびカバー株式会社とは一切関係ありません。
+    </p>
+</footer>
 </html>
