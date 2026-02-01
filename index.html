@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>はじめ語変換ツール (Prototyping)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>はじめ語変換ジェネレーター</h1>
+
+        <section class="card">
+            <h2>Step 1: 日本語入力</h2>
+            <textarea id="input-text" placeholder="ここに変換したい文章を入力してね..."></textarea>
+            <button id="btn-analyze">解析を開始する</button>
+        </section>
+
+        <section id="step-edit" class="card hidden">
+            <h2>Step 2: 読みと区切りの確認</h2>
+            <p class="instruction">スラッシュ `/` で区切りを編集できるよ。読みが違う場合は直接直してね。</p>
+            <input type="text" id="edit-hiragana">
+            <div class="setting-row">
+                <label for="accent-range">訛り度（カオス度）:</label>
+                <input type="range" id="accent-range" min="0" max="100" value="70">
+                <span id="accent-value">70%</span>
+            </div>
+            <button id="btn-convert">はじめ語に変換！</button>
+        </section>
+
+        <section id="step-result" class="card hidden">
+            <h2>Step 3: 変換結果</h2>
+            <div id="result-display" class="result-box"></div>
+            <div class="action-group">
+                <button id="btn-play">▶ 再生する</button>
+                <button id="btn-copy">コピー</button>
+            </div>
+        </section>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
