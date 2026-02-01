@@ -41,8 +41,8 @@ class HajimeConverter {
     async initKuroshiro() {
         console.log("辞書をロード中...");
         const analyzer = new KuromojiAnalyzer({
-            // 辞書ファイルのパス (CDN経由)
-            dictPath: "https://cdn.jsdelivr.net/npm/kuromoji@0.1.2/dict/"
+            // 辞書ファイルのパス
+            dictPath: "dict/"
         });
         await this.kuroshiro.init(analyzer);
         this.isReady = true;
